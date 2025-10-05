@@ -1,17 +1,30 @@
-// interfaces/index.ts
-
-// Interface for the Card component props
-export interface CardProps {
-  title: string;
+export interface PropertyProps {
+  name: string;
+  rating: number;
+  address: {
+    street: string;
+    city: string;
+    state: string;
+    country: string;
+  };
+  image: string;
+  images?: string[];
   description: string;
-  imageUrl: string;
-  onClick?: () => void;
+  category: string[];
+  price: number;
+  offers?: {
+    bed: string;
+    shower: string;
+    occupants: string;
+  };
+  discount?: string;
+  reviews?: ReviewProps[];
 }
 
-// Interface for the Button component props
-export interface ButtonProps {
-  label: string;
-  onClick: () => void;
-  type?: "button" | "submit" | "reset";
-  disabled?: boolean;
+export interface ReviewProps {
+  name: string;
+  avatar: string;
+  rating: number;
+  comment: string;
+  date?: string;
 }
